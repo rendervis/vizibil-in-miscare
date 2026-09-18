@@ -28,6 +28,7 @@ export async function POST(request: Request) {
   const port = Number(process.env.ZOHO_SMTP_PORT ?? "465");
   const user = process.env.ZOHO_SMTP_USER;
   const pass = process.env.ZOHO_SMTP_PASS;
+  const from = process.env.LEADS_FROM ?? user;
   const toBusiness = process.env.LEADS_BUSINESS_TO ?? user;
   const toDriver = process.env.LEADS_DRIVER_TO ?? user;
 
@@ -41,7 +42,7 @@ export async function POST(request: Request) {
 
   const transporter = nodemailer.createTransport({ host, port, secure: port === 465, auth: { user, pass } });
   const target = lead.role === "business" ? toBusiness : toDriver;
-  const subject = lead.role === "business" ? `[Pilot] Interes business — ${lead.city}` : `[Pilot] Șofer — ${lead.city}`;
+  const subject = lead.role === "business" ? `[Website] Interes business — ${lead.city}` : `[Website] Șofer — ${lead.city}`;
   const body = [
     `Rol: ${lead.role}`,
     `Nume: ${lead.name}`,
@@ -54,7 +55,7 @@ export async function POST(request: Request) {
   ].join("\n");
 
   try {
-    await transporter.sendMail({ from: user, to: target, replyTo: lead.email, subject, text: body });
+    await transporter.sendMail({ from: `Vizibil în Mișcare <${from}>`, to: target, replyTo: lead.email, subject, text: body });
     return NextResponse.json({ ok: true, delivered: true });
   } catch (error) {
     console.error("lead_delivery_failed", error);

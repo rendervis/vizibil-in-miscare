@@ -1,23 +1,47 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
-export function Logo({ className, compact = false }: { className?: string; compact?: boolean }) {
+type LogoProps = {
+  className?: string;
+  compact?: boolean;
+  variant?: "default" | "light";
+  priority?: boolean;
+};
+
+export function Logo({
+  className,
+  compact = false,
+  variant = "default",
+  priority = false,
+}: LogoProps) {
   if (compact) {
     return (
-      <div className={cn("grid size-9 place-items-center rounded-xl bg-[var(--ink)]", className)} aria-label={siteConfig.name}>
-        <svg viewBox="0 0 36 36" className="size-7" aria-hidden="true">
-          <path d="M7 23.5C11.5 23.5 12.5 12 18 12C23 12 24.5 23 29 23" fill="none" stroke="var(--signal)" strokeWidth="3.4" strokeLinecap="round" />
-          <circle cx="7" cy="23.5" r="2.6" fill="var(--paper)" />
-          <circle cx="29" cy="23" r="2.6" fill="var(--paper)" />
-        </svg>
-      </div>
+      <span className={cn("inline-flex shrink-0 items-center", className)}>
+        <Image
+          src="/icon.svg"
+          alt={siteConfig.name}
+          width={40}
+          height={40}
+          priority={priority}
+          unoptimized
+          className="size-9 shrink-0"
+        />
+      </span>
     );
   }
 
   return (
-    <div className={cn("inline-flex flex-col leading-none", className)} aria-label={siteConfig.name}>
-      <span className="font-display text-[1.05rem] font-extrabold tracking-[-.035em]">Vizibil <span className="font-medium">în Mișcare</span></span>
-      <span className="mt-1 block h-[3px] w-16 rounded-full bg-[var(--signal)]" aria-hidden="true" />
-    </div>
+    <span className={cn("inline-flex shrink-0 items-center", className)}>
+      <Image
+        src={variant === "light" ? "/logo-light.svg" : "/logo.svg"}
+        alt={siteConfig.name}
+        width={215}
+        height={36}
+        priority={priority}
+        unoptimized
+        className="h-8 w-auto sm:h-9"
+      />
+    </span>
   );
 }

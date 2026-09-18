@@ -1,1 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 170" role="img" aria-label="Vizibil în Mișcare"><rect width="420" height="170" fill="none"/><text x="12" y="62" font-family="Manrope,Inter,Arial,sans-serif" font-size="54" font-weight="760" letter-spacing="-1.8" fill="#1F1830">Vizibil</text><path d="M14 80 H160" stroke="#C7F36B" stroke-width="8" stroke-linecap="round"/><text x="12" y="139" font-family="Manrope,Inter,Arial,sans-serif" font-size="46" font-weight="520" letter-spacing="-1.5" fill="#1F1830">în Mișcare</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 160" role="img" aria-label="Vizibil în Mișcare">
+
+  <defs>
+    <linearGradient id="mark-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#20122F"/>
+      <stop offset="1" stop-color="#160C25"/>
+    </linearGradient>
+    <linearGradient id="mark-white" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F4F2F6"/>
+    </linearGradient>
+    <linearGradient id="mark-lime" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D1FF45"/>
+      <stop offset="1" stop-color="#A8F51F"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(8 8) scale(0.051036682615629984)">
+    <circle cx="627" cy="627" r="538" fill="url(#mark-dark)"/>
+    <path d="M296 419 C292 423 292 430 298 440 L510 828 C520 846 538 860 567 865 L740 865 L555 514 C541 487 526 456 512 437 C501 424 486 415 467 415 L301 415 C299 415 297 417 296 419 Z" fill="url(#mark-white)"/>
+    <path d="M957 419 C954 416 951 415 946 415 L793 415 C774 415 757 425 741 447 L648 608 C642 619 644 628 650 633 C653 636 656 637 662 637 L807 637 C827 637 845 626 856 607 L959 433 C962 428 961 423 957 419 Z" fill="url(#mark-lime)"/>
+  </g>
+  <text x="8" y="116" fill="#1F1830" font-family="Manrope, Inter, Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="-1.6">Vizibil</text>
+  <text x="115" y="116" fill="#1F1830" font-family="Manrope, Inter, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="-1.6">în Mișcare</text>
+  <text x="8" y="143" fill="#7C72F2" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">PUBLICITATE LOCALĂ PE TRASEE REALE</text>
+</svg>

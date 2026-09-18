@@ -1,37 +1,45 @@
-"use client";
+import posthog from "posthog-js";
 
-type Properties = Record<string, string | number | boolean | null | undefined>;
+type AnalyticsProperties = Record<
+  string,
+  string | number | boolean | null | undefined
+>;
 
-let posthogPromise: Promise<typeof import("posthog-js")> | null = null;
+export const analyticsEvents = {
+  businessCtaClicked: "business_cta_clicked",
+  driverCtaClicked: "driver_cta_clicked",
 
-async function getPosthog() {
-  const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
-  if (!key || typeof window === "undefined") return null;
+  marketSearchStarted: "market_search_started",
+  targetAreaSelected: "target_area_selected",
 
-  if (!posthogPromise) posthogPromise = import("posthog-js");
+  vehicleCardViewed: "vehicle_card_viewed",
+  vehicleAdded: "vehicle_added",
+  vehicleRemoved: "vehicle_removed",
 
-  const module = await posthogPromise;
-  const posthog = module.default;
-  const win = window as Window & { __vizibilPosthog?: boolean };
+  campaignSummaryOpened: "campaign_summary_opened",
 
-  if (!win.__vizibilPosthog) {
-    posthog.init(key, {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://eu.i.posthog.com",
-      person_profiles: "identified_only",
-      capture_pageview: true,
-      autocapture: false,
-    });
-    win.__vizibilPosthog = true;
-  }
+  businessLeadStarted: "business_lead_started",
+  businessLeadSubmitted: "business_lead_submitted",
 
-  return posthog;
-}
+  driverLeadStarted: "driver_lead_started",
+  driverLeadSubmitted: "driver_lead_submitted",
 
-export async function trackEvent(name: string, properties: Properties = {}) {
-  try {
-    const posthog = await getPosthog();
-    posthog?.capture(name, properties);
-  } catch {
-    // Analytics must never block the smoke-test funnel.
-  }
+  seoCtaClicked: "seo_cta_clicked",
+} as const;
+
+export type AnalyticsEvent =
+  (typeof analyticsEvents)[keyof typeof analyticsEvents];
+
+export function trackEvent(
+  event: AnalyticsEvent,
+  properties: AnalyticsProperties = {},
+) {
+  if (typeof window === "undefined") return;
+
+  const projectToken =
+    process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN?.trim();
+
+  if (!projectToken) return;
+
+  posthog.capture(event, properties);
 }

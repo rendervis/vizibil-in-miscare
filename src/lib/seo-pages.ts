@@ -1,99 +1,205 @@
+import { media } from "@/config/media";
+
+export type SeoAudience = "business" | "driver";
+
 export type SeoPage = {
-  slug: string;
+  slug: keyof typeof media.seo;
+  audience: SeoAudience;
   title: string;
   description: string;
+  keywords: string[];
   eyebrow: string;
   h1: string;
   intro: string;
+  heroImage: string;
+  heroAlt: string;
+  supportImage: string;
+  supportAlt: string;
   sections: Array<{ heading: string; body: string }>;
   faq: Array<[string, string]>;
+  related: Array<{ href: string; label: string }>;
 };
 
 export const seoPages: SeoPage[] = [
   {
     slug: "publicitate-pe-masini",
+    audience: "business",
     title: "Publicitate pe mașini pentru afaceri locale",
-    description: "Cum poate funcționa publicitatea locală pe mașini care circulă deja în zone relevante și ce validăm prin pilotul nostru din București.",
+    description: "Publicitate pe mașini în București, pe trasee locale relevante. Vezi cum alegi zona, mașinile și o campanie verificabilă cu Vizibil în Mișcare.",
+    keywords: ["publicitate pe masini", "publicitate pe mașini București", "reclama pe masini", "reclama auto locală"],
     eyebrow: "Publicitate pe mașini",
-    h1: "Publicitate pe mașini, gândită pentru trasee locale reale.",
-    intro: "Testăm un marketplace în care o afacere poate alege plasamente pe mașini ale căror trasee obișnuite acoperă zonele în care se află clienții săi.",
+    h1: "Publicitate pe mașini care circulă deja prin zonele unde sunt clienții tăi.",
+    intro: "Vizibil în Mișcare transformă traseele obișnuite ale unor mașini în plasamente publicitare locale. Alegi zona, compari profilurile potrivite și construiești campania fără să cumperi un panou fix.",
+    heroImage: media.seo["publicitate-pe-masini"].hero,
+    heroAlt: "Mașină cu reclamă detașabilă pentru o afacere locală, fotografiată pe o stradă din București",
+    supportImage: media.seo["publicitate-pe-masini"].support,
+    supportAlt: "Detaliu cu magnet publicitar montat pe portiera unei mașini",
     sections: [
-      { heading: "De ce nu este doar colantare auto", body: "Produsul urmărește să transforme mișcarea normală a unei mașini într-un inventar local care poate fi rezervat. Mașina trebuie să fie relevantă prin traseu, nu doar prin faptul că există." },
-      { heading: "Ce ar vedea advertiserul", body: "Zone agregate, intervale uzuale, acoperire estimată pe baza istoricului și costul plasamentului înainte de rezervare. Adresele private ale șoferului nu fac parte din produs." },
-      { heading: "Ce validăm acum", body: "Interesul real al firmelor, nivelul de preț acceptabil și ce tipuri de traseu sau vehicul sunt selectate înainte să construim infrastructura completă." },
+      { heading: "Alegi zona înainte să alegi mașina", body: "O campanie locală are sens atunci când mașina circulă în zonele potrivite. De aceea, selecția pornește de la traseu și acoperire, nu doar de la marca sau modelul vehiculului." },
+      { heading: "Materialul publicitar rămâne simplu și detașabil", body: "Folosim un format ușor de montat, verificat și îndepărtat. Scopul este vizibilitate locală pe durata campaniei, nu transformarea permanentă a mașinii." },
+      { heading: "Costul campaniei este clar înainte de lansare", body: "Business-ul vede costul plasamentului, durata și mașinile selectate. Șoferul vede separat recompensa lui înainte să accepte. Nu este nevoie de abonament." },
+      { heading: "Livrarea trebuie să poată fi verificată", body: "Campania pornește după confirmarea mașinii și a materialului montat. Verificările urmăresc desfășurarea campaniei, fără promisiuni artificiale despre vânzări sau număr de impresii." },
     ],
-    faq: [["Mașinile sunt deja disponibile?", "Inventarul din demo este sintetic și marcat ca atare. Pilotul colectează cerere și șoferi interesați înainte de lansarea marketplace-ului real."], ["Este o agenție de publicitate?", "Direcția este un marketplace self-service, nu o agenție care cere brief și construiește manual fiecare campanie."]],
+    faq: [
+      ["Cât costă publicitatea pe o mașină?", "Costul depinde de campanie, durată și profilul mașinii. Pe site afișăm exemple de preț pentru 28 de zile, iar disponibilitatea reală se confirmă înainte de lansare."],
+      ["Pot alege mai multe mașini?", "Da. O campanie poate include una sau mai multe mașini, fiecare fiind un plasament separat în aceeași campanie."],
+      ["Este nevoie de colantare completă?", "Nu. Direcția este publicitate detașabilă, compatibilă cu vehiculul și ușor de verificat."],
+    ],
+    related: [
+      { href: "/publicitate-locala-bucuresti", label: "Publicitate locală în București" },
+      { href: "/publicitate-mobila", label: "Publicitate mobilă" },
+      { href: "/alternative-panouri-publicitare", label: "Alternative la panouri" },
+    ],
   },
   {
     slug: "reclama-pe-masina",
-    title: "Reclamă pe mașină: model local cu traseu verificabil",
-    description: "Reclamă detașabilă pe mașini: cum poate fi aleasă o mașină după zonele în care circulă și cum ar fi verificată o campanie.",
+    audience: "business",
+    title: "Reclamă pe mașină: cum funcționează pentru afaceri și șoferi",
+    description: "Reclamă pe mașină cu material detașabil, trasee locale și recompensă fixă pentru șofer. Vezi modelul Vizibil în Mișcare pentru București.",
+    keywords: ["reclama pe masina", "reclamă pe mașină", "reclame pe masini", "reclama auto"],
     eyebrow: "Reclamă pe mașină",
-    h1: "Reclama pe mașină poate deveni inventar local, nu doar un sticker.",
-    intro: "Conceptul pilot conectează firme locale cu șoferi ale căror drumuri obișnuite se potrivesc geografic cu publicul afacerii.",
+    h1: "Reclamă pe mașină, fără drumuri făcute doar pentru reclamă.",
+    intro: "Afacerea cumpără vizibilitate locală. Șoferul primește o recompensă fixă pentru o campanie care se potrivește cu drumurile lui normale. Platforma face legătura dintre cele două părți și verifică desfășurarea.",
+    heroImage: media.seo["reclama-pe-masina"].hero,
+    heroAlt: "Femeie lângă o mașină cu reclamă magnetică detașabilă pentru un business local",
+    supportImage: media.seo["reclama-pe-masina"].support,
+    supportAlt: "Prim-plan cu o reclamă detașabilă montată pe o mașină urbană",
     sections: [
-      { heading: "Traseul înaintea mașinii", body: "În produsul propus, o mașină nu devine disponibilă doar pentru că proprietarul s-a înscris. Traseul normal este mai întâi observat și transformat într-un profil agregat." },
-      { heading: "Material detașabil", body: "Pilotul este gândit în jurul materialelor detașabile compatibile cu vehiculul, fără ca platforma să devină atelier de colantare." },
-      { heading: "Livrare verificată", body: "Pornirea campaniei, mișcarea în timpul perioadei și verificările vizuale oferă dovezi despre livrare fără să pretindă că putem măsura câți oameni s-au uitat efectiv la reclamă." },
+      { heading: "Pentru afacere: alegi unde vrei să fii văzut", body: "Zona și traseul sunt mai importante decât simpla prezență a unei mașini. Marketplace-ul este gândit să arate profiluri relevante pentru aria în care se află clienții tăi." },
+      { heading: "Pentru șofer: vezi suma înainte să accepți", body: "Oferta indică durata și recompensa fixă. Șoferul poate accepta sau refuza fără să fie obligat să schimbe rutina zilnică pentru a genera kilometri suplimentari." },
+      { heading: "Pentru campanie: folosim dovadă, nu presupuneri", body: "Montarea materialului și desfășurarea campaniei sunt verificabile. Nu confundăm traseul parcurs cu vânzările generate și nu prezentăm estimări ca rezultate garantate." },
     ],
-    faq: [["Șoferul primește bani per kilometru?", "Direcția este o recompensă fixă pentru un plasament care se potrivește traseului normal, nu stimularea kilometrilor inutili."], ["Pot fi mai multe reclame pe aceeași mașină?", "Pentru pilot, modelul este un advertiser activ per mașină pentru simplitate și claritate."]],
+    faq: [
+      ["Pot câștiga bani cu reclama pe mașina personală?", "Da, dacă mașina și traseul se potrivesc unei campanii disponibile. Recompensa este prezentată înainte de acceptare."],
+      ["Trebuie să conduc pe un traseu impus?", "Nu. Modelul Vizibil în Mișcare pornește de la drumurile pe care le faci deja."],
+      ["Reclama este permanentă?", "Nu. Materialul este gândit să fie detașabil la finalul campaniei."],
+    ],
+    related: [
+      { href: "/castiga-bani-cu-masina", label: "Câștigă bani cu mașina" },
+      { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
+      { href: "/publicitate-mobila", label: "Publicitate mobilă" },
+    ],
   },
   {
     slug: "castiga-bani-cu-masina",
+    audience: "driver",
     title: "Câștigă bani cu mașina din drumurile pe care le faci deja",
-    description: "Înscrie-te în pilot ca șofer: traseul tău obișnuit poate primi oferte fixe pentru reclame locale detașabile, fără trasee speciale.",
+    description: "Vrei să câștigi bani cu mașina personală? Înscrie mașina în Vizibil în Mișcare și primește oferte de reclamă potrivite traseului tău.",
+    keywords: ["castiga bani cu masina", "câștigă bani cu mașina", "reclama pe masina bani", "venit suplimentar cu masina"],
     eyebrow: "Pentru șoferi",
-    h1: "Fă bani din drumurile pe care le faci deja.",
-    intro: "Nu vrem să plătim oameni să conducă fără rost. Ideea este ca traseele pe care le faci deja să poată primi oferte de la afaceri care vor vizibilitate în acele zone.",
+    h1: "Câștigă bani cu mașina fără să-ți inventezi drumuri în plus.",
+    intro: "Îți folosești mașina ca de obicei. Dacă traseul tău se potrivește unei campanii locale, primești o ofertă cu sumă și durată clare. Tu decizi dacă o accepți.",
+    heroImage: media.seo["castiga-bani-cu-masina"].hero,
+    heroAlt: "Șoferiță din București lângă mașina personală cu reclamă detașabilă",
+    supportImage: media.seo["castiga-bani-cu-masina"].support,
+    supportAlt: "Șoferiță verificând pe telefon detaliile unei campanii de reclamă auto",
     sections: [
-      { heading: "Cum intră o mașină în piață", body: "După înscriere, produsul final va învăța mișcarea normală timp de mai multe zile. Abia apoi traseul poate deveni inventar disponibil." },
-      { heading: "Știi recompensa înainte", body: "Fiecare ofertă arată suma fixă, perioada, cerințele și reclama înainte să accepți. Nu există obligația de a accepta campanii care nu îți plac." },
-      { heading: "Fără trasee speciale", body: "O campanie trebuie să se potrivească rutinei existente. Obiectivul nu este să creeze trafic suplimentar sau să transforme șoferul într-un curier de publicitate." },
+      { heading: "Înscrii mașina și zonele prin care circuli", body: "La început ne interesează orașul, mașina și rutina generală de deplasare. Adresele private nu trebuie expuse advertiserului." },
+      { heading: "Primești oferte doar când există o potrivire", body: "O clinică, un showroom sau un alt business poate căuta vizibilitate exact în zonele prin care treci. Atunci primești oferta relevantă pentru mașina ta." },
+      { heading: "Vezi suma înainte să accepți", body: "Nu lucrăm cu promisiuni de tip «până la». Oferta de campanie trebuie să aibă o recompensă fixă și o durată clară înainte să spui da." },
+      { heading: "Conduci normal pe durata campaniei", body: "Nu vrem să te plimbi fără motiv pentru a acumula kilometri. Ideea este să fii plătit pentru expunerea pe traseele pe care le ai deja." },
     ],
-    faq: [["Cât pot câștiga?", "Pilotul testează încă nivelul real de recompensă. Pagina principală prezintă oferte demonstrative, nu venit garantat."], ["Trebuie să țin aplicația deschisă?", "În produsul mobil final, route learning ar fi proiectat pentru localizare în fundal cu permisiunile explicite ale utilizatorului."]],
+    faq: [
+      ["Cât pot câștiga?", "Suma diferă de la o campanie la alta. Pe site folosim un exemplu de 300 RON pentru 28 de zile; oferta reală este afișată înainte de acceptare."],
+      ["Ce mașini sunt acceptate?", "Evaluăm starea mașinii, compatibilitatea cu materialul publicitar și relevanța traseului. Nu promitem acceptarea automată a oricărui vehicul."],
+      ["Trebuie să plătesc ceva ca șofer?", "Nu există abonament pentru șofer. Condițiile concrete ale campaniei sunt comunicate înainte de acceptare."],
+    ],
+    related: [
+      { href: "/reclama-pe-masina", label: "Cum funcționează reclama pe mașină" },
+      { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
+    ],
   },
   {
     slug: "publicitate-locala-bucuresti",
-    title: "Publicitate locală în București bazată pe trasee reale",
-    description: "Pilot pentru publicitate locală în București: selectează zone și testează mașini care ar circula deja prin cartierele relevante pentru afacerea ta.",
-    eyebrow: "București",
-    h1: "Publicitate locală în București, construită în jurul zonelor care contează.",
-    intro: "Pentru o clinică, sală sau afacere locală contează mai mult unde este văzută decât câte mașini există în total. De aceea demo-ul pornește de la zonă.",
+    audience: "business",
+    title: "Publicitate locală în București pe mașini și trasee reale",
+    description: "Publicitate locală în București pentru afaceri care vor vizibilitate în zone precise. Campanii pe mașini care circulă deja prin cartiere relevante.",
+    keywords: ["publicitate locala Bucuresti", "publicitate locală București", "reclama locala Bucuresti", "promovare locala Bucuresti"],
+    eyebrow: "Publicitate locală București",
+    h1: "Fii văzut în zonele din București care contează pentru afacerea ta.",
+    intro: "Dacă afacerea ta depinde de clienți locali, nu ai nevoie neapărat de expunere în tot orașul. Vizibil în Mișcare este construit pentru selecție pe zone și trasee relevante.",
+    heroImage: media.seo["publicitate-locala-bucuresti"].hero,
+    heroAlt: "Mașină cu reclamă locală circulând prin București într-o zonă urbană aglomerată",
+    supportImage: media.seo["publicitate-locala-bucuresti"].support,
+    supportAlt: "Hartă simplificată a Bucureștiului cu zone locale și traseu de campanie",
     sections: [
-      { heading: "Selectezi zona, nu un pachet generic", body: "Pipera, Floreasca, Aviatorilor sau alte zone pot fi căutate separat. Marketplace-ul ar returna doar inventarul cu istoric relevant pentru țintă." },
-      { heading: "Campanii mici, testabile", body: "Direcția comercială este să permită unei firme locale să înceapă cu una sau câteva mașini fără contract de agenție și fără abonament." },
-      { heading: "Pilot înainte de aplicație", body: "În această etapă măsurăm ce caută firmele, ce inventar selectează și dacă există intenție de rezervare la prețuri realiste." },
+      { heading: "Începi cu zona, nu cu formatul", body: "Pipera, Floreasca, Aviatorilor, Militari sau altă zonă: întrebarea inițială este unde vrei să fii văzut. Apoi cauți mașinile care au sens pentru acea arie." },
+      { heading: "Potrivit pentru business-uri cu rază locală", body: "Clinici, săli, service-uri, showroom-uri, agenții imobiliare, restaurante, servicii pentru casă sau deschideri de locații pot avea nevoie de prezență repetată într-o zonă limitată." },
+      { heading: "Poți începe cu o singură mașină", body: "Poți începe cu un singur plasament local, apoi să extinzi numărul de mașini dacă formatul are sens pentru afacerea ta." },
+      { heading: "Nu confundăm mișcarea cu performanța comercială", body: "Putem verifica desfășurarea campaniei și traseele relevante. Vânzările, lead-urile sau vizitele în locație trebuie măsurate separat de business." },
     ],
-    faq: [["Este disponibil doar în București?", "București este piața pilot pentru validare. Arhitectura propusă este multi-city și multi-country."], ["Pot căuta după cartier?", "Demo-ul pornește exact de la această idee: business-ul caută zona și compară inventarul compatibil."]],
+    faq: [
+      ["În ce zone din București va fi disponibil?", "Disponibilitatea din București se construiește în funcție de șoferii înscriși. Zonele disponibile vor depinde de traseele reale ale acestora."],
+      ["Pot cere o anumită zonă?", "Da. Cererea business-ului pornește de la zona dorită; apoi verificăm dacă există mașini cu traseu relevant."],
+      ["Pot promova o singură locație?", "Da. Conceptul este potrivit inclusiv pentru o clinică, sală, showroom sau altă locație care vrea vizibilitate în jurul unei arii clare."],
+    ],
+    related: [
+      { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
+      { href: "/alternative-panouri-publicitare", label: "Alternative la panouri" },
+      { href: "/publicitate-mobila", label: "Publicitate mobilă" },
+    ],
   },
   {
     slug: "publicitate-mobila",
+    audience: "business",
     title: "Publicitate mobilă pentru afaceri locale",
-    description: "Un model de publicitate mobilă cu mașini obișnuite, rute învățate înainte de rezervare și campanii verificate după lansare.",
+    description: "Publicitate mobilă pe mașini care circulă deja prin oraș. Alege zone relevante, mașini potrivite și o campanie locală verificabilă.",
+    keywords: ["publicitate mobila", "publicitate mobilă", "reclama mobila", "publicitate auto"],
     eyebrow: "Publicitate mobilă",
-    h1: "Publicitate mobilă fără camion publicitar și fără agenție grea.",
-    intro: "Testăm o variantă mai simplă: mașini obișnuite, deplasări care existau deja, material detașabil și un marketplace unde business-ul poate vedea și rezerva inventarul.",
+    h1: "Publicitate mobilă care urmează viața reală a orașului.",
+    intro: "În loc să rămână într-un singur punct, mesajul tău se deplasează odată cu mașina. Diferența importantă este să alegi trasee relevante, nu să cumperi kilometri fără context.",
+    heroImage: media.seo["publicitate-mobila"].hero,
+    heroAlt: "Mașină cu reclamă mobilă circulând printr-o zonă comercială din București",
+    supportImage: media.seo["publicitate-mobila"].support,
+    supportAlt: "Mai multe mașini cu reclame detașabile într-o campanie de publicitate mobilă",
     sections: [
-      { heading: "Ce cumpără de fapt business-ul", body: "Nu cumpără kilometri fără context. Cumpără un plasament temporar pe un vehicul cu un profil de mișcare relevant pentru zona selectată." },
-      { heading: "De ce fixed reward pentru șofer", body: "Recompensa fixă păstrează incentivația aliniată cu ideea de traseu normal și evită transformarea produsului într-o cursă după kilometri." },
-      { heading: "Ce putem dovedi", body: "Putem raporta zile active, distanță verificată în zone, profil de acoperire și verificări vizuale. Nu prezentăm estimări de impresii drept certitudini." },
+      { heading: "Mesajul se deplasează între zone", body: "O mașină poate trece în mod repetat prin zone rezidențiale, de birouri și comerciale. Profilul de traseu ajută business-ul să aleagă mișcarea care are sens pentru campanie." },
+      { heading: "Campaniile pot folosi una sau mai multe mașini", body: "Poți începe cu un singur plasament sau poți combina mai multe mașini pentru acoperire mai largă. Fiecare mașină rămâne un plasament separat în cadrul campaniei." },
+      { heading: "Formatul rămâne fizic, selecția devine digitală", body: "Reclama este pe vehicul, dar căutarea, selecția, confirmarea și verificarea campaniei sunt gândite ca un flux de marketplace." },
     ],
-    faq: [["Este DOOH?", "Nu în sensul clasic al ecranelor digitale mobile. Pilotul este axat pe suport fizic detașabil și inventar de rută."], ["Este pentru branduri mari?", "Poate servi și campanii mai mari, dar primul caz de utilizare este business-ul local care vrea o campanie mică și controlabilă."]],
+    faq: [
+      ["Ce înseamnă publicitate mobilă?", "În acest context, este publicitate fizică afișată pe vehicule care circulă prin oraș, în locul unui suport fix."],
+      ["Este același lucru cu un camion publicitar?", "Nu. Vizibil în Mișcare pornește de la mașini care fac deja deplasări normale, nu de la vehicule trimise special să circule cu reclamă."],
+      ["Pot folosi mai multe mașini în aceeași campanie?", "Da. O campanie poate grupa mai multe plasamente, fiecare cu mașina și traseul său."],
+    ],
+    related: [
+      { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
+      { href: "/publicitate-locala-bucuresti", label: "Publicitate locală București" },
+      { href: "/alternative-panouri-publicitare", label: "Alternative la panouri" },
+    ],
   },
   {
     slug: "alternative-panouri-publicitare",
+    audience: "business",
     title: "Alternative la panouri publicitare pentru promovare locală",
-    description: "Compară ideea unui plasament mobil local cu panourile clasice: rută, flexibilitate, campanii mici și verificare fără abonament.",
-    eyebrow: "Alternative OOH",
-    h1: "O alternativă flexibilă la un panou fix: inventar care se mișcă deja.",
-    intro: "Un panou are un punct fix. O mașină are un traseu. Pilotul testează dacă acel traseu poate fi cumpărat simplu de afaceri locale ca plasament publicitar temporar.",
+    description: "Cauți alternative la panouri publicitare? Compară publicitatea fixă cu o campanie mobilă pe mașini care circulă deja prin zone relevante.",
+    keywords: ["alternative panouri publicitare", "alternative billboard", "publicitate stradala alternativa", "promovare locala"],
+    eyebrow: "Alternative la panouri publicitare",
+    h1: "O alternativă la panoul fix: vizibilitate care se mișcă prin zona ta.",
+    intro: "Panoul publicitar cumpără un punct. O campanie pe mașini cumpără prezență mobilă pe trasee care există deja. Nu sunt produse identice — iar diferența poate fi utilă pentru un business local.",
+    heroImage: media.seo["alternative-panouri-publicitare"].hero,
+    heroAlt: "Mașină cu reclamă locală trecând pe lângă un panou publicitar fix în București",
+    supportImage: media.seo["alternative-panouri-publicitare"].support,
+    supportAlt: "Comparație vizuală între panou publicitar fix și reclamă mobilă pe mașină",
     sections: [
-      { heading: "Nu este un substitut universal", body: "Un panou bun are avantajele lui. Marketplace-ul propus este mai potrivit atunci când business-ul vrea să testeze mai multe coridoare locale cu buget mai mic și inventar flexibil." },
-      { heading: "Mai multe plasamente într-o campanie", body: "Un buget poate fi împărțit între mai multe mașini, fiecare cu propriul traseu și propriul plasament confirmat." },
-      { heading: "Date înainte și după", body: "Istoricul agregat ajută la alegere înainte de rezervare, iar verificarea de campanie arată ce s-a livrat după lansare." },
+      { heading: "Panou fix: prezență într-un singur loc", body: "Un panou poate fi foarte bun când intersecția, artera sau locația sunt exact cele potrivite. Avantajul este stabilitatea punctului; dezavantajul este că mesajul nu se deplasează." },
+      { heading: "Mașină: prezență pe un traseu", body: "O mașină poate trece prin mai multe zone într-o săptămână. Asta nu o face automat mai bună decât un panou; o face un alt tip de inventar, potrivit pentru alte obiective locale." },
+      { heading: "Marketplace-ul face selecția mai concretă", body: "În loc să ceri o ofertă generică, direcția Vizibil în Mișcare este să alegi zona, să vezi profilurile disponibile și să construiești campania cu cost clar." },
+      { heading: "Poți testa înainte să scalezi", body: "Pentru o afacere locală, o campanie cu una sau câteva mașini poate fi o modalitate de a testa formatul înainte de o campanie mai mare." },
     ],
-    faq: [["Este mai bun decât un billboard?", "Nu există un câștigător universal. Sunt canale diferite. Pilotul testează dacă flexibilitatea și relevanța locală justifică alegerea pentru anumite afaceri."], ["Trebuie să rezerv mai multe mașini?", "Nu. Modelul permite un singur plasament, dar campaniile multi-car pot acoperi mai multe coridoare."]],
+    faq: [
+      ["Este publicitatea pe mașini mai bună decât un panou?", "Nu există un răspuns universal. Panoul cumpără un punct fix; mașina oferă prezență mobilă. Alegerea depinde de zonă, obiectiv, buget și felul în care vrei să fii văzut."],
+      ["Pot combina panouri și mașini?", "Da. Sunt canale diferite și pot face parte din același mix local dacă fiecare are un rol clar."],
+      ["Cum măsor dacă funcționează?", "Platforma poate verifica livrarea campaniei. Pentru rezultate comerciale, business-ul poate folosi coduri, landing pages, numere dedicate sau comparații de trafic și lead-uri."],
+    ],
+    related: [
+      { href: "/publicitate-mobila", label: "Publicitate mobilă" },
+      { href: "/publicitate-locala-bucuresti", label: "Publicitate locală București" },
+      { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
+    ],
   },
 ];
 
-export function getSeoPage(slug: string) { return seoPages.find((page) => page.slug === slug); }
+export function getSeoPage(slug: string) {
+  return seoPages.find((page) => page.slug === slug);
+}

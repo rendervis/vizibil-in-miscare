@@ -17,27 +17,95 @@ const displayFont = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+
   title: {
-    default: `${siteConfig.name} — publicitate pe mașini și promovare locală`,
-    template: `%s | ${siteConfig.name}`,
+    default: "Vizibil în Mișcare | Publicitate pe mașini în București",
+    template: "%s | Vizibil în Mișcare",
   },
+
   description: siteConfig.description,
+
   applicationName: siteConfig.name,
-  alternates: { canonical: "/" },
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "advertising",
+
+  manifest: "/manifest.webmanifest",
+
+  alternates: {
+    canonical: "/",
+    languages: {
+      "ro-RO": "/",
+    },
+  },
+
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: [
+      {
+        url: "/web-app-manifest-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+    ],
+  },
+
+  appleWebApp: {
+    capable: true,
+    title: siteConfig.name,
+    statusBarStyle: "default",
+  },
+
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — publicitate locală pe trasee reale`,
+    title: "Vizibil în Mișcare | Publicitate locală pe mașini",
     description: siteConfig.description,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1731,
+        height: 909,
+        alt: siteConfig.name,
+      },
+    ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — publicitate locală pe trasee reale`,
+    title: "Vizibil în Mișcare | Publicitate locală pe mașini",
     description: siteConfig.description,
+    images: ["/twitter-image.png"],
+    creator: "@vizibilinmiscare",
   },
-  robots: { index: true, follow: true },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  other: {
+    "google-site-verification":
+      "v3JNSbmw0w8AyMlfN_59LiL4-IF1d9V8M1yTnDnK1sQ",
+  },
 };
 
 export const viewport: Viewport = {
@@ -45,10 +113,16 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="ro">
-      <body className={`${bodyFont.variable} ${displayFont.variable}`}>{children}</body>
+      <body className={`${bodyFont.variable} ${displayFont.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

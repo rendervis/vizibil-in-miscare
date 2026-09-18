@@ -1,1 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 110" role="img" aria-label="Vizibil în Mișcare"><rect width="620" height="110" fill="none"/><text x="10" y="67" font-family="Manrope,Inter,Arial,sans-serif" font-size="48" font-weight="750" letter-spacing="-1.6" fill="#1F1830">Vizibil</text><text x="174" y="67" font-family="Manrope,Inter,Arial,sans-serif" font-size="48" font-weight="500" letter-spacing="-1.6" fill="#1F1830"> în Mișcare</text><path d="M12 84 H146" stroke="#C7F36B" stroke-width="8" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 72" role="img" aria-label="Vizibil în Mișcare">
+
+  <defs>
+    <linearGradient id="mark-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#20122F"></stop>
+      <stop offset="1" stop-color="#160C25"></stop>
+    </linearGradient>
+
+    <linearGradient id="mark-white" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"></stop>
+      <stop offset="1" stop-color="#F4F2F6"></stop>
+    </linearGradient>
+
+    <linearGradient id="mark-lime" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D1FF45"></stop>
+      <stop offset="1" stop-color="#A8F51F"></stop>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(2 8) scale(0.044657097288676235)">
+    <circle cx="627" cy="627" r="538" fill="url(#mark-dark)"></circle>
+
+    <path d="M296 419 C292 423 292 430 298 440 L510 828 C520 846 538 860 567 865 L740 865 L555 514 C541 487 526 456 512 437 C501 424 486 415 467 415 L301 415 C299 415 297 417 296 419 Z" fill="url(#mark-white)"></path>
+
+    <path d="M957 419 C954 416 951 415 946 415 L793 415 C774 415 757 425 741 447 L648 608 C642 619 644 628 650 633 C653 636 656 637 662 637 L807 637 C827 637 845 626 856 607 L959 433 C962 428 961 423 957 419 Z" fill="url(#mark-lime)"></path>
+  </g>
+
+  <text x="76" y="47" fill="#1F1830" font-family="Manrope, Inter, Arial, sans-serif" font-size="31" font-weight="800" letter-spacing="-1.5">Vizibil</text>
+
+  <text x="176" y="47" fill="#1F1830" font-family="Manrope, Inter, Arial, sans-serif" font-size="31" font-weight="500" letter-spacing="-1.5">în Mișcare</text>
+</svg>
