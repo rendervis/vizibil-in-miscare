@@ -43,7 +43,7 @@ export function HowItWorks() {
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {steps.map(({ icon: Icon, n, title, body, image, alt }) => (
             <article key={n} className="overflow-hidden rounded-[2rem] border border-[var(--ink)]/10 bg-white/70 shadow-[0_18px_70px_rgba(31,24,48,.06)]">
-              <MediaFrame src={image} alt={alt} className="aspect-[4/5] sm:aspect-[4/3]" />
+              <MediaFrame src={image} alt={alt} className="aspect-[4/5] sm:aspect-[4/3] sm:[&_img]:object-bottom" />
               <div className="p-5 sm:p-6 md:p-7">
                 <div className="flex items-center justify-between gap-4">
                   <div className="grid size-11 place-items-center rounded-2xl bg-[var(--ink)] text-[var(--signal)]"><Icon className="size-5" /></div>
