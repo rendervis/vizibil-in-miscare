@@ -39,6 +39,7 @@ export const seoPages: SeoPage[] = [
       { heading: "Materialul publicitar rămâne simplu și detașabil", body: "Folosim un format ușor de montat, verificat și îndepărtat. Scopul este vizibilitate locală pe durata campaniei, nu transformarea permanentă a mașinii." },
       { heading: "Costul campaniei este clar înainte de lansare", body: "Business-ul vede costul plasamentului, durata și mașinile selectate. Șoferul vede separat recompensa lui înainte să accepte. Nu este nevoie de abonament." },
       { heading: "Livrarea trebuie să poată fi verificată", body: "Campania pornește după confirmarea mașinii și a materialului montat. Verificările urmăresc desfășurarea campaniei, fără promisiuni artificiale despre vânzări sau număr de impresii." },
+      { heading: "Când are sens acest format în mixul tău de promovare", body: "Dacă vrei să ajungi la oameni din cartierele unde afacerea poate primi clienți, publicitatea pe mașini este o opțiune de vizibilitate offline. Completează căutarea locală, recomandările și canalele online; nu le înlocuiește automat. Compară zonele, durata, mesajul și modul de măsurare înainte să alegi." },
     ],
     faq: [
       ["Cât costă publicitatea pe o mașină?", "Costul depinde de campanie, durată și profilul mașinii. Pe site afișăm exemple de preț pentru 28 de zile, iar disponibilitatea reală se confirmă înainte de lansare."],
@@ -49,6 +50,7 @@ export const seoPages: SeoPage[] = [
       { href: "/publicitate-locala-bucuresti", label: "Publicitate locală în București" },
       { href: "/publicitate-mobila", label: "Publicitate mobilă" },
       { href: "/alternative-panouri-publicitare", label: "Alternative la panouri" },
+      { href: "/promovare-afacere-locala", label: "Cum îți promovezi afacerea locală" },
     ],
   },
   {
@@ -68,6 +70,7 @@ export const seoPages: SeoPage[] = [
       { heading: "Pentru afacere: alegi unde vrei să fii văzut", body: "Zona și traseul sunt mai importante decât simpla prezență a unei mașini. Marketplace-ul este gândit să arate profiluri relevante pentru aria în care se află clienții tăi." },
       { heading: "Pentru șofer: vezi suma înainte să accepți", body: "Oferta indică durata și recompensa fixă. Șoferul poate accepta sau refuza fără să fie obligat să schimbe rutina zilnică pentru a genera kilometri suplimentari." },
       { heading: "Pentru campanie: folosim dovadă, nu presupuneri", body: "Montarea materialului și desfășurarea campaniei sunt verificabile. Nu confundăm traseul parcurs cu vânzările generate și nu prezentăm estimări ca rezultate garantate." },
+      { heading: "Reclamă pe mașina personală sau reclamă cumpărată de afacere?", body: "Sunt cele două părți ale aceluiași mecanism: șoferul își înscrie vehiculul și rutina generală, iar afacerea alege o zonă și un plasament relevant. Dacă întrebarea ta este cum poți câștiga bani cu mașina, citește ghidul pentru șoferi. Dacă vrei să promovezi un business, vezi pagina dedicată publicității pe mașini." },
     ],
     faq: [
       ["Pot câștiga bani cu reclama pe mașina personală?", "Da, dacă mașina și traseul se potrivesc unei campanii disponibile. Recompensa este prezentată înainte de acceptare."],
@@ -78,35 +81,41 @@ export const seoPages: SeoPage[] = [
       { href: "/castiga-bani-cu-masina", label: "Câștigă bani cu mașina" },
       { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
       { href: "/publicitate-mobila", label: "Publicitate mobilă" },
+      { href: "/alternative-bolt-uber", label: "Alternative la Bolt și Uber" },
     ],
   },
   {
     slug: "castiga-bani-cu-masina",
     audience: "driver",
-    title: "Câștigă bani cu mașina din drumurile pe care le faci deja",
-    description: "Vrei să câștigi bani cu mașina personală? Înscrie mașina în Vizibil în Mișcare și primește oferte de reclamă potrivite traseului tău.",
-    keywords: ["castiga bani cu masina", "câștigă bani cu mașina", "reclama pe masina bani", "venit suplimentar cu masina"],
+    title: "Cum faci bani cu mașina personală din drumurile zilnice",
+    description: "Cauți venit suplimentar cu mașina personală? Vezi cum funcționează reclama detașabilă pe mașină, ce presupune înscrierea și când poți primi o ofertă.",
+    keywords: ["cum fac bani cu masina", "venit suplimentar cu masina", "castiga bani cu masina", "reclama pe masina personala"],
     eyebrow: "Pentru șoferi",
     h1: "Câștigă bani cu mașina fără să-ți inventezi drumuri în plus.",
     intro: "Îți folosești mașina ca de obicei. Dacă traseul tău se potrivește unei campanii locale, primești o ofertă cu sumă și durată clare. Tu decizi dacă o accepți.",
     heroImage: media.seo["castiga-bani-cu-masina"].hero,
-    heroAlt: "Șoferiță din București lângă mașina personală cu reclamă detașabilă",
+    heroAlt: "Șofer cu mașină personală și material publicitar detașabil în București",
     supportImage: media.seo["castiga-bani-cu-masina"].support,
-    supportAlt: "Șoferiță verificând pe telefon detaliile unei campanii de reclamă auto",
+    supportAlt: "Șofer lângă mașină, cu telefonul în mână și reclamă detașabilă pe portieră",
     sections: [
       { heading: "Înscrii mașina și zonele prin care circuli", body: "La început ne interesează orașul, mașina și rutina generală de deplasare. Adresele private nu trebuie expuse advertiserului." },
       { heading: "Primești oferte doar când există o potrivire", body: "O clinică, un showroom sau un alt business poate căuta vizibilitate exact în zonele prin care treci. Atunci primești oferta relevantă pentru mașina ta." },
       { heading: "Vezi suma înainte să accepți", body: "Nu lucrăm cu promisiuni de tip «până la». Oferta de campanie trebuie să aibă o recompensă fixă și o durată clară înainte să spui da." },
       { heading: "Conduci normal pe durata campaniei", body: "Nu vrem să te plimbi fără motiv pentru a acumula kilometri. Ideea este să fii plătit pentru expunerea pe traseele pe care le ai deja." },
+      { heading: "Este o alternativă la un job cu mașina personală?", body: "Dacă te întrebi cum faci bani cu mașina fără livrări sau pasageri, publicitatea auto funcționează diferit: nu primești comenzi de transport, ci o ofertă de plasare a reclamei pentru o durată stabilită. Nu înlocuiește obligatoriu venitul dintr-un job și nu garantează campanii continue. Compară opțiunile și timpul necesar înainte să decizi." },
+      { heading: "Ce se întâmplă dacă nu există campanii pe traseul tău?", body: "Înscrierea nu înseamnă plată imediată. O ofertă apare doar dacă un advertiser caută vizibilitate într-o zonă compatibilă și mașina îndeplinește condițiile campaniei. Dacă nu există potrivire, nu ai obligația de a circula suplimentar pentru reclamă." },
     ],
     faq: [
       ["Cât pot câștiga?", "Suma diferă de la o campanie la alta. Pe site folosim un exemplu de 300 RON pentru 28 de zile; oferta reală este afișată înainte de acceptare."],
       ["Ce mașini sunt acceptate?", "Evaluăm starea mașinii, compatibilitatea cu materialul publicitar și relevanța traseului. Nu promitem acceptarea automată a oricărui vehicul."],
       ["Trebuie să plătesc ceva ca șofer?", "Nu există abonament pentru șofer. Condițiile concrete ale campaniei sunt comunicate înainte de acceptare."],
+      ["Este același lucru cu un job Bolt sau Uber?", "Nu. Nu transporți pasageri prin Vizibil în Mișcare. Participi la o campanie publicitară pe traseele pe care le faci deja, dacă există o ofertă potrivită."],
+      ["Pot câștiga bani cu mașina fără să conduc mai mult?", "Acesta este scopul modelului: folosim drumurile tale existente, fără ture impuse doar pentru reclamă. Recompensa depinde de o campanie acceptată, nu doar de înscriere."],
     ],
     related: [
       { href: "/reclama-pe-masina", label: "Cum funcționează reclama pe mașină" },
       { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
+      { href: "/alternative-bolt-uber", label: "Alternative la Bolt și Uber pentru venit suplimentar" },
     ],
   },
   {
@@ -127,6 +136,7 @@ export const seoPages: SeoPage[] = [
       { heading: "Potrivit pentru business-uri cu rază locală", body: "Clinici, săli, service-uri, showroom-uri, agenții imobiliare, restaurante, servicii pentru casă sau deschideri de locații pot avea nevoie de prezență repetată într-o zonă limitată." },
       { heading: "Poți începe cu o singură mașină", body: "Poți începe cu un singur plasament local, apoi să extinzi numărul de mașini dacă formatul are sens pentru afacerea ta." },
       { heading: "Nu confundăm mișcarea cu performanța comercială", body: "Putem verifica desfășurarea campaniei și traseele relevante. Vânzările, lead-urile sau vizitele în locație trebuie măsurate separat de business." },
+      { heading: "Cum se completează cu celelalte soluții de promovare locală", body: "O afacere poate combina căutarea Google, recomandările, colaborările din cartier și vizibilitatea fizică. Publicitatea pe mașini are rolul de a purta mesajul pe traseele relevante din București; pagina despre promovarea afacerii locale explică modul în care alegi și combini canalele după obiectiv." },
     ],
     faq: [
       ["În ce zone din București va fi disponibil?", "Disponibilitatea din București se construiește în funcție de șoferii înscriși. Zonele disponibile vor depinde de traseele reale ale acestora."],
@@ -137,6 +147,8 @@ export const seoPages: SeoPage[] = [
       { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
       { href: "/alternative-panouri-publicitare", label: "Alternative la panouri" },
       { href: "/publicitate-mobila", label: "Publicitate mobilă" },
+      { href: "/promovare-afacere-locala", label: "Cum îți promovezi afacerea locală" },
+      { href: "/idei-promovare-afacere-mica", label: "Promovare pentru afaceri mici" },
     ],
   },
   {
@@ -156,6 +168,7 @@ export const seoPages: SeoPage[] = [
       { heading: "Mesajul se deplasează între zone", body: "O mașină poate trece în mod repetat prin zone rezidențiale, de birouri și comerciale. Profilul de traseu ajută business-ul să aleagă mișcarea care are sens pentru campanie." },
       { heading: "Campaniile pot folosi una sau mai multe mașini", body: "Poți începe cu un singur plasament sau poți combina mai multe mașini pentru acoperire mai largă. Fiecare mașină rămâne un plasament separat în cadrul campaniei." },
       { heading: "Formatul rămâne fizic, selecția devine digitală", body: "Reclama este pe vehicul, dar căutarea, selecția, confirmarea și verificarea campaniei sunt gândite ca un flux de marketplace." },
+      { heading: "Publicitate mobilă nu înseamnă orice reclamă online pe telefon", body: "Aici vorbim despre publicitate fizică pe vehicule, nu despre bannere și reclame din aplicații mobile. Pentru Vizibil în Mișcare, mesajul este afișat pe un material magnetic detașabil montat pe o mașină privată, iar selecția campaniei se face online." },
     ],
     faq: [
       ["Ce înseamnă publicitate mobilă?", "În acest context, este publicitate fizică afișată pe vehicule care circulă prin oraș, în locul unui suport fix."],
@@ -166,6 +179,7 @@ export const seoPages: SeoPage[] = [
       { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
       { href: "/publicitate-locala-bucuresti", label: "Publicitate locală București" },
       { href: "/alternative-panouri-publicitare", label: "Alternative la panouri" },
+      { href: "/promovare-afacere-locala", label: "Ghid de promovare locală" },
     ],
   },
   {
@@ -186,6 +200,7 @@ export const seoPages: SeoPage[] = [
       { heading: "Mașină: prezență pe un traseu", body: "O mașină poate trece prin mai multe zone într-o săptămână. Asta nu o face automat mai bună decât un panou; o face un alt tip de inventar, potrivit pentru alte obiective locale." },
       { heading: "Marketplace-ul face selecția mai concretă", body: "În loc să ceri o ofertă generică, direcția Vizibil în Mișcare este să alegi zona, să vezi profilurile disponibile și să construiești campania cu cost clar." },
       { heading: "Poți testa înainte să scalezi", body: "Pentru o afacere locală, o campanie cu una sau câteva mașini poate fi o modalitate de a testa formatul înainte de o campanie mai mare." },
+      { heading: "Cum decizi între outdoor fix, reclamă în trafic și canale online", body: "Stabilește dacă ai nevoie să fii prezent într-o locație anume, în mai multe zone prin care trec clienți sau în momentul în care aceștia caută serviciul. Panoul fix, mașinile și publicitatea online răspund unor situații diferite. Pentru un plan mai larg, consultă ghidul despre promovarea unei afaceri locale." },
     ],
     faq: [
       ["Este publicitatea pe mașini mai bună decât un panou?", "Nu există un răspuns universal. Panoul cumpără un punct fix; mașina oferă prezență mobilă. Alegerea depinde de zonă, obiectiv, buget și felul în care vrei să fii văzut."],
@@ -196,6 +211,7 @@ export const seoPages: SeoPage[] = [
       { href: "/publicitate-mobila", label: "Publicitate mobilă" },
       { href: "/publicitate-locala-bucuresti", label: "Publicitate locală București" },
       { href: "/publicitate-pe-masini", label: "Publicitate pe mașini" },
+      { href: "/promovare-afacere-locala", label: "Ghid de promovare locală" },
     ],
   },
 ];

@@ -57,6 +57,27 @@ export function SiteFooter() {
             >
               Câștigă cu mașina
             </Link>
+
+            <Link
+              className="rounded-sm text-white/65 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--signal)]"
+              href="/alternative-bolt-uber"
+            >
+              Alternative la Bolt și Uber
+            </Link>
+
+            <Link
+              className="rounded-sm text-white/65 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--signal)]"
+              href="/promovare-afacere-locala"
+            >
+              Promovare afacere locală
+            </Link>
+
+            <Link
+              className="rounded-sm text-white/65 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--signal)]"
+              href="/idei-promovare-afacere-mica"
+            >
+              Idei de promovare
+            </Link>
           </div>
 
           <div className="grid content-start gap-3">

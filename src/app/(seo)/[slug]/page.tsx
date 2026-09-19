@@ -7,15 +7,45 @@ import { Logo } from "@/components/landing/logo";
 import { MediaFrame } from "@/components/landing/media-frame";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { getSeoPage, seoPages } from "@/lib/seo-pages";
+import { contentPages, getContentPage } from "@/lib/content-pages";
+import { EditorialArticle } from "@/components/seo/editorial-article";
 import { siteConfig } from "@/config/site";
 
 export function generateStaticParams() {
-  return seoPages.map(({ slug }) => ({ slug }));
+  return [...seoPages, ...contentPages].map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const page = getSeoPage(slug);
+  const article = getContentPage(slug);
+  if (!page && !article) return {};
+
+  if (article) {
+    return {
+      title: article.title,
+      description: article.description,
+      alternates: {
+        canonical: `/${article.slug}`,
+        languages: { "ro-RO": `/${article.slug}` },
+      },
+      openGraph: {
+        type: "article",
+        locale: siteConfig.locale,
+        siteName: siteConfig.name,
+        title: article.title,
+        description: article.description,
+        url: `${siteConfig.url}/${article.slug}`,
+        images: [{ url: "/og-image.png", alt: siteConfig.name }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: article.title,
+        description: article.description,
+        images: ["/twitter-image.png"],
+      },
+    };
+  }
   if (!page) return {};
 
   return {
@@ -46,6 +76,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function SeoLandingPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const article = getContentPage(slug);
+  if (article) return <EditorialArticle page={article} />;
+
   const page = getSeoPage(slug);
   if (!page) notFound();
 

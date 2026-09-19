@@ -19,8 +19,6 @@ export function MediaFrame({
 
   return (
     <div
-      role="img"
-      aria-label={alt}
       className={cn(
         "relative overflow-hidden bg-[var(--ink)]",
         className,
@@ -36,7 +34,7 @@ export function MediaFrame({
 
       <Image
         src={src}
-        alt=""
+        alt={alt}
         fill
         sizes="(max-width: 1024px) 100vw, 50vw"
         className={cn(
