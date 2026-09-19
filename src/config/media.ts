@@ -16,7 +16,7 @@ export const media = {
       support: "/media/seo/reclama-pe-masina-detail.png",
     },
     "castiga-bani-cu-masina": {
-      hero: "/media/seo/castiga-bani-cu-masina-hero.png",
+      hero: "/media/seo/publicitate-locala-bucuresti-hero.png",
       support: "/media/seo/castiga-bani-cu-masina-detail.png",
     },
     "publicitate-locala-bucuresti": {

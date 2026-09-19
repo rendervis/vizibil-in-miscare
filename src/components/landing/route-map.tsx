@@ -10,7 +10,7 @@ const accentMap = {
 export function RouteMap({ accent = "lime", compact = false }: { accent?: keyof typeof accentMap; compact?: boolean }) {
   const color = accentMap[accent];
   return (
-    <div className={cn("relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--map)]", compact ? "h-40" : "h-[410px]") }>
+    <div className={cn("relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--map)]", compact ? "h-40" : "h-[300px] sm:h-[360px] md:h-[410px]") }>
       <svg viewBox="0 0 700 440" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full" aria-label="Hartă demo cu trasee anonimizate">
         <rect width="700" height="440" fill="var(--map)" />
         <g fill="none" stroke="var(--map-road)" strokeWidth="2">
@@ -54,11 +54,11 @@ export function RouteMap({ accent = "lime", compact = false }: { accent?: keyof 
       </svg>
       {!compact && (
         <>
-          <div className="absolute left-5 top-5 rounded-full border border-white/10 bg-[color:rgb(33_23_37_/_0.82)] px-3 py-2 text-xs font-bold text-white backdrop-blur">Pipera · Floreasca · Aviatorilor</div>
-          <div className="absolute bottom-5 left-5 right-5 grid grid-cols-3 gap-2 rounded-2xl border border-white/10 bg-[color:rgb(33_23_37_/_0.88)] p-3 text-white backdrop-blur">
-            <div><div className="text-[10px] uppercase tracking-[.12em] text-white/45">Profil</div><div className="mt-1 text-sm font-bold">Rută normală</div></div>
-            <div><div className="text-[10px] uppercase tracking-[.12em] text-white/45">Fereastră</div><div className="mt-1 text-sm font-bold">L–V · AM/PM</div></div>
-            <div><div className="text-[10px] uppercase tracking-[.12em] text-white/45">Confidență</div><div className="mt-1 text-sm font-bold">91%</div></div>
+          <div className="absolute left-3 right-3 top-3 w-fit max-w-[calc(100%-1.5rem)] rounded-full border border-white/10 bg-[color:rgb(33_23_37_/_0.82)] px-3 py-2 text-[10px] font-bold text-white backdrop-blur sm:left-5 sm:right-auto sm:top-5 sm:max-w-none sm:text-xs">Pipera · Floreasca · Aviatorilor</div>
+          <div className="absolute bottom-3 left-3 right-3 grid grid-cols-3 gap-2 rounded-2xl border border-white/10 bg-[color:rgb(33_23_37_/_0.88)] p-3 text-white backdrop-blur sm:bottom-5 sm:left-5 sm:right-5">
+            <div><div className="text-[9px] uppercase tracking-[.1em] text-white/45 sm:text-[10px] sm:tracking-[.12em]">Profil</div><div className="mt-1 text-[11px] font-bold leading-4 sm:text-sm">Rută normală</div></div>
+            <div><div className="text-[9px] uppercase tracking-[.1em] text-white/45 sm:text-[10px] sm:tracking-[.12em]">Fereastră</div><div className="mt-1 text-[11px] font-bold leading-4 sm:text-sm">L–V · AM/PM</div></div>
+            <div><div className="text-[9px] uppercase tracking-[.1em] text-white/45 sm:text-[10px] sm:tracking-[.12em]">Confidență</div><div className="mt-1 text-[11px] font-bold leading-4 sm:text-sm">91%</div></div>
           </div>
         </>
       )}

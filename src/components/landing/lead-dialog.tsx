@@ -180,13 +180,13 @@ export function LeadDialog({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/60 p-3 backdrop-blur-md sm:p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/60 p-2 backdrop-blur-md sm:p-4"
       role="presentation"
       onMouseDown={onClose}
     >
       <div
         ref={dialogRef}
-        className="relative my-auto max-h-[calc(100dvh-1.5rem)] w-full max-w-xl overflow-y-auto overscroll-contain rounded-[1.75rem] border border-[var(--ink)]/10 bg-[var(--paper)] p-5 text-[var(--foreground)] shadow-[0_32px_120px_rgba(0,0,0,.32)] sm:max-h-[calc(100dvh-2rem)] sm:rounded-[2rem] sm:p-6 md:p-8"
+        className="relative my-auto max-h-[calc(100dvh-1rem)] w-full max-w-xl overflow-y-auto overscroll-contain rounded-[1.5rem] border border-[var(--ink)]/10 bg-[var(--paper)] p-4 text-[var(--foreground)] shadow-[0_32px_120px_rgba(0,0,0,.32)] sm:max-h-[calc(100dvh-2rem)] sm:rounded-[2rem] sm:p-6 md:p-8"
         role="dialog"
         aria-modal="true"
         aria-labelledby="lead-title"
@@ -328,7 +328,7 @@ export function LeadDialog({
                     ? "Ex: VW Golf 2019 · Pipera, Centru, Titan"
                     : "Ce vrei să promovezi și în ce zonă?"
                 }
-                className="w-full resize-none rounded-2xl border border-[var(--border)] bg-white/65 px-4 py-3 text-sm text-[var(--foreground)] outline-none transition placeholder:text-[var(--muted-foreground)] focus:border-[var(--route)] focus:ring-2 focus:ring-[color:rgb(124_114_242_/_0.14)]"
+                className="w-full resize-none rounded-2xl border border-[var(--border)] bg-white/65 px-4 py-3 text-base text-[var(--foreground)] outline-none transition placeholder:text-[var(--muted-foreground)] focus:border-[var(--route)] focus:ring-2 focus:ring-[color:rgb(124_114_242_/_0.14)] sm:text-sm"
               />
             </label>
 

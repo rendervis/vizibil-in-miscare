@@ -26,7 +26,7 @@ export function SiteFooter() {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 text-sm">
+        <div className="grid grid-cols-1 gap-8 text-sm sm:grid-cols-2 sm:gap-6">
           <div className="grid content-start gap-3">
             <span className="font-bold text-white/90">Explorează</span>
 

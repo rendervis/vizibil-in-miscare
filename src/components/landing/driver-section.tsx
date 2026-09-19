@@ -13,7 +13,7 @@ export function DriverSection() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section id="driver" className="scroll-mt-20 bg-white py-20 md:py-28">
+    <section id="driver" className="scroll-mt-20 bg-white py-16 sm:py-20 md:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[1.02fr_.98fr] lg:items-center">
         <div className="relative order-2 lg:order-1">
           <div className="absolute -inset-6 rounded-[3rem] bg-[var(--signal)] opacity-[.08] blur-3xl" />
@@ -50,11 +50,11 @@ export function DriverSection() {
             Pentru șoferi
           </Badge>
 
-          <h2 className="font-display mt-5 text-5xl font-extrabold leading-[.94] tracking-[-.055em] md:text-7xl">
+          <h2 className="font-display mt-5 text-5xl font-extrabold leading-[.94] tracking-[-.055em] max-sm:text-[2.65rem] max-sm:tracking-[-.045em] md:text-6xl lg:text-7xl">
             Fă bani din drumurile pe care le faci deja.
           </h2>
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--muted-foreground)]">
+          <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--muted-foreground)] max-sm:text-base max-sm:leading-7">
             Îți înscrii mașina și zonele prin care circuli. Când apare o campanie
             potrivită, vezi suma și perioada înainte să accepți. Nu te trimitem
             să faci drumuri speciale pentru reclamă.
@@ -102,7 +102,7 @@ export function DriverSection() {
 
           <Button
             size="lg"
-            className="mt-7"
+            className="mt-7 max-sm:w-full"
             onClick={() => {
               void trackEvent(analyticsEvents.driverCtaClicked, {
                 source: "driver_section",

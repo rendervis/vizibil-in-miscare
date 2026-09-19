@@ -84,32 +84,35 @@ export default async function SeoLandingPage({ params }: { params: Promise<{ slu
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <header className="border-b border-[var(--ink)]/10 bg-[var(--paper)]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
-          <Link href="/" aria-label="Vizibil în Mișcare — acasă"><Logo /></Link>
-          <Button asChild size="sm"><Link href={primaryHref}>{primaryLabel} <ArrowRight className="cta-arrow size-3.5" /></Link></Button>
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-5 sm:py-5 md:px-8">
+          <Link href="/" aria-label="Vizibil în Mișcare — acasă" className="shrink-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2">
+            <span className="sm:hidden"><Logo compact /></span>
+            <span className="hidden sm:inline-flex"><Logo /></span>
+          </Link>
+          <Button asChild size="sm" className="max-sm:h-11 max-sm:px-3"><Link href={primaryHref}>{primaryLabel} <ArrowRight className="cta-arrow size-3.5" /></Link></Button>
         </div>
       </header>
 
       <main>
-        <section className="paper-grid bg-[var(--paper)] py-16 md:py-24">
+        <section className="paper-grid bg-[var(--paper)] py-12 sm:py-16 md:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
             <div>
               <div className="text-xs font-black uppercase tracking-[.18em] text-[var(--route)]">{page.eyebrow}</div>
-              <h1 className="font-display mt-5 max-w-4xl text-5xl font-extrabold leading-[.92] tracking-[-.055em] md:text-7xl">{page.h1}</h1>
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--ink)]/72">{page.intro}</p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg"><Link href={primaryHref}>{primaryLabel} <ArrowRight className="cta-arrow size-4" /></Link></Button>
-                <Button asChild variant="outline" size="lg"><Link href="/#cum-functioneaza">Cum funcționează <ArrowRight className="cta-arrow size-4" /></Link></Button>
+              <h1 className="font-display mt-5 max-w-4xl text-5xl font-extrabold leading-[.92] tracking-[-.055em] max-sm:text-[2.6rem] max-sm:tracking-[-.045em] md:text-6xl lg:text-7xl">{page.h1}</h1>
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--ink)]/72 max-sm:text-base max-sm:leading-7">{page.intro}</p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Button asChild size="lg" className="max-sm:w-full"><Link href={primaryHref}>{primaryLabel} <ArrowRight className="cta-arrow size-4" /></Link></Button>
+                <Button asChild variant="outline" size="lg" className="max-sm:w-full"><Link href="/#cum-functioneaza">Cum funcționează <ArrowRight className="cta-arrow size-4" /></Link></Button>
               </div>
             </div>
-            <MediaFrame src={page.heroImage} alt={page.heroAlt} label={page.eyebrow} className="aspect-[4/3] rounded-[2.2rem] border border-[var(--border)] shadow-[0_30px_100px_rgba(31,24,48,.14)] lg:aspect-[5/4]" />
+            <MediaFrame src={page.heroImage} alt={page.heroAlt} label={page.eyebrow} className="aspect-[4/5] rounded-[2.2rem] border border-[var(--border)] shadow-[0_30px_100px_rgba(31,24,48,.14)] sm:aspect-[4/3] sm:[&_img]:object-bottom lg:aspect-[5/4]" />
           </div>
         </section>
 
-        <section className="bg-white py-16 md:py-24">
+        <section className="bg-white py-14 sm:py-16 md:py-24">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[.9fr_1.1fr]">
             <div className="lg:sticky lg:top-24 lg:self-start">
-              <MediaFrame src={page.supportImage} alt={page.supportAlt} className="aspect-[4/3] rounded-[2rem] border border-[var(--border)]" />
+              <MediaFrame src={page.supportImage} alt={page.supportAlt} className="aspect-[4/5] rounded-[2rem] border border-[var(--border)] sm:aspect-[4/3] sm:[&_img]:object-bottom" />
               <div className="mt-5 rounded-[1.5rem] bg-[var(--paper)] p-5">
                 <div className="flex gap-3 text-sm font-bold"><CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[var(--route)]" /> Traseele private nu sunt expuse advertiserului.</div>
                 <div className="mt-3 flex gap-3 text-sm font-bold"><CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[var(--route)]" /> Disponibilitatea se confirmă înainte de plată.</div>
@@ -117,9 +120,9 @@ export default async function SeoLandingPage({ params }: { params: Promise<{ slu
             </div>
             <div className="grid gap-0">
               {page.sections.map((section, index) => (
-                <article key={section.heading} className="grid gap-4 border-t border-[var(--ink)]/10 py-8 md:grid-cols-[72px_1fr]">
+                <article key={section.heading} className="grid gap-3 border-t border-[var(--ink)]/10 py-7 sm:gap-4 sm:py-8 md:grid-cols-[72px_1fr]">
                   <div className="text-xs font-black tracking-[.16em] text-[var(--route)]">0{index + 1}</div>
-                  <div><h2 className="text-2xl font-black tracking-[-.03em] md:text-3xl">{section.heading}</h2><p className="mt-3 max-w-2xl text-base leading-7 text-[var(--ink)]/70">{section.body}</p></div>
+                  <div><h2 className="text-[1.35rem] font-black leading-tight tracking-[-.03em] sm:text-2xl md:text-3xl">{section.heading}</h2><p className="mt-3 max-w-2xl text-base leading-7 text-[var(--ink)]/70">{section.body}</p></div>
                 </article>
               ))}
             </div>
@@ -139,11 +142,11 @@ export default async function SeoLandingPage({ params }: { params: Promise<{ slu
           <div className="mx-auto grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-[.7fr_1.3fr]">
             <div>
               <div className="text-xs font-black uppercase tracking-[.16em] text-[var(--signal)]">FAQ</div>
-              <h2 className="font-display mt-4 text-4xl font-extrabold tracking-[-.045em] md:text-5xl">Întrebări despre {page.eyebrow.toLowerCase()}</h2>
+              <h2 className="font-display mt-4 text-4xl font-extrabold tracking-[-.045em] max-sm:text-[2.25rem] md:text-5xl">Întrebări despre {page.eyebrow.toLowerCase()}</h2>
             </div>
             <div className="divide-y divide-white/10 border-y border-white/10">
               {page.faq.map(([q, a]) => (
-                <details key={q} className="group py-5">
+                <details key={q} className="group py-5 max-sm:py-6">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-black marker:hidden">{q}<span className="text-xl font-normal text-[var(--signal)] transition group-open:rotate-45">+</span></summary>
                   <p className="mt-3 max-w-2xl text-sm leading-6 text-white/72">{a}</p>
                 </details>
@@ -154,8 +157,8 @@ export default async function SeoLandingPage({ params }: { params: Promise<{ slu
 
         <section className="bg-[var(--paper)] py-16 md:py-20">
           <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-6 px-5 md:flex-row md:items-center md:px-8">
-            <div><div className="text-xs font-black uppercase tracking-[.16em] text-[var(--route)]">Vizibil în Mișcare</div><h2 className="mt-2 text-3xl font-black tracking-[-.035em]">{page.audience === "driver" ? "Ai mașină și circuli prin București?" : "Ai o afacere locală în București?"}</h2></div>
-            <Button asChild size="lg"><Link href={primaryHref}>{primaryLabel} <ArrowRight className="cta-arrow size-4" /></Link></Button>
+            <div><div className="text-xs font-black uppercase tracking-[.16em] text-[var(--route)]">Vizibil în Mișcare</div><h2 className="mt-2 text-3xl font-black tracking-[-.035em] max-sm:text-[1.75rem]">{page.audience === "driver" ? "Ai mașină și circuli prin București?" : "Ai o afacere locală în București?"}</h2></div>
+            <Button asChild size="lg" className="max-sm:w-full"><Link href={primaryHref}>{primaryLabel} <ArrowRight className="cta-arrow size-4" /></Link></Button>
           </div>
         </section>
       </main>

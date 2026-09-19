@@ -114,7 +114,7 @@ export function MarketplaceDemo() {
   return (
     <section
       id="pentru-afaceri"
-      className="scroll-mt-20 bg-[var(--ink)] py-16 text-white md:py-28"
+      className="scroll-mt-20 bg-[var(--ink)] py-16 text-white max-[430px]:py-14 md:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-5 md:px-8">
         <div className="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
@@ -123,7 +123,7 @@ export function MarketplaceDemo() {
               Pentru afaceri · exemplu de marketplace
             </Badge>
 
-            <h2 className="mt-5 max-w-2xl text-4xl font-black leading-[.98] tracking-[-.045em] sm:text-5xl md:text-6xl">
+            <h2 className="mt-5 max-w-2xl text-4xl font-black leading-[.98] tracking-[-.045em] max-[360px]:text-[2.15rem] sm:text-5xl md:text-6xl">
               Alege unde vrei să fii văzut.
             </h2>
           </div>
@@ -170,7 +170,7 @@ export function MarketplaceDemo() {
               <RouteMap />
             </div>
 
-            <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
+            <div className="mt-4 grid grid-cols-3 gap-2">
               <Metric
                 label="Mașini demo"
                 value={searched ? String(demoVehicles.length) : "—"}
@@ -209,7 +209,7 @@ export function MarketplaceDemo() {
                     type="button"
                     onClick={() => toggleVehicle(vehicle.id)}
                     aria-pressed={isSelected}
-                    className={`group w-full cursor-pointer rounded-[1.35rem] border p-4 text-left transition duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 sm:rounded-[1.5rem] ${
+                    className={`group w-full cursor-pointer rounded-[1.35rem] border p-4 text-left transition duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 max-[360px]:p-3 sm:rounded-[1.5rem] ${
                       isSelected
                         ? "border-[var(--signal)] bg-[color:rgb(197_240_107_/_0.08)]"
                         : "border-white/10 bg-white/[.035] hover:border-white/20 hover:bg-white/[.055]"
@@ -334,12 +334,12 @@ export function MarketplaceDemo() {
               </div>
             </div>
 
-            <div className="mt-3 flex w-full gap-2 md:mt-0 md:w-auto">
+            <div className="mt-3 flex w-full gap-2 max-[360px]:flex-col md:mt-0 md:w-auto">
               {selected.length > 0 ? (
                 <Button
                   variant="darkGhost"
                   size="sm"
-                  className="shrink-0"
+                  className="shrink-0 max-[360px]:w-full"
                   onClick={clearSelection}
                 >
                   <X className="size-3.5" />

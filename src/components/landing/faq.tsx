@@ -15,16 +15,16 @@ export function Faq() {
   };
 
   return (
-    <section id="faq" className="bg-[var(--paper)] py-20 md:py-28">
+    <section id="faq" className="bg-[var(--paper)] py-16 sm:py-20 md:py-28">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className="mx-auto grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-[.75fr_1.25fr]">
         <div>
           <div className="text-xs font-black uppercase tracking-[.16em] text-[var(--route)]">Întrebări frecvente</div>
-          <h2 className="font-display mt-4 text-5xl font-extrabold leading-[.94] tracking-[-.055em] md:text-6xl">Ce trebuie să știi înainte să te înscrii.</h2>
+          <h2 className="font-display mt-4 text-5xl font-extrabold leading-[.94] tracking-[-.055em] max-sm:text-[2.65rem] max-sm:tracking-[-.045em] md:text-6xl">Ce trebuie să știi înainte să te înscrii.</h2>
         </div>
         <div className="divide-y divide-[var(--ink)]/12 border-y border-[var(--ink)]/12">
           {faqs.map(([q, a]) => (
-            <details key={q} className="group py-5">
+            <details key={q} className="group py-5 max-sm:py-6">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-black tracking-[-.015em] marker:hidden">
                 {q}<span className="text-xl font-normal text-[var(--route)] transition duration-200 group-open:rotate-45">+</span>
               </summary>

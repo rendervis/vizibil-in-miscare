@@ -10,11 +10,14 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-18 sm:px-5 md:px-8">
         <Link
           href="/"
-          className="shrink-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2"
+          className="shrink-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] focus-visible:ring-offset-2 max-sm:grid max-sm:size-11 max-sm:place-items-center"
           aria-label={`${siteConfig.name} — pagina principală`}
         >
           <span className="sm:hidden">
-            <Logo compact priority   className="w-[150px] sm:w-[185px] md:w-[205px]" />
+            <Logo compact priority />
+          </span>
+          <span className="hidden sm:inline-flex">
+            <Logo priority />
           </span>
         </Link>
 
@@ -34,7 +37,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex min-w-0 items-center gap-2">
-          <Button asChild size="sm" className="max-sm:px-3">
+          <Button asChild size="sm" className="max-sm:h-11 max-sm:px-3">
             <Link href="/#pentru-afaceri">
               <span className="sm:hidden">Campanie</span>
               <span className="hidden sm:inline">Începe o campanie</span>

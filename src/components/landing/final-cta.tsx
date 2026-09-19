@@ -18,7 +18,7 @@ export function FinalCta() {
             București · înscrieri deschise
           </div>
 
-          <h2 className="font-display mt-5 text-5xl font-extrabold leading-[.94] tracking-[-.055em] md:text-7xl">
+          <h2 className="font-display mt-5 text-5xl font-extrabold leading-[.94] tracking-[-.055em] max-sm:text-[2.65rem] max-sm:tracking-[-.045em] md:text-6xl lg:text-7xl">
             Două moduri de a intra în mișcare.
           </h2>
 
@@ -29,7 +29,7 @@ export function FinalCta() {
         </div>
 
         <div className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-2">
-          <article className="rounded-[2rem] border border-white/12 bg-white/[.065] p-7 md:p-8">
+          <article className="rounded-[2rem] border border-white/12 bg-white/[.065] p-6 sm:p-7 md:p-8">
             <div className="grid size-12 place-items-center rounded-2xl bg-[var(--signal)] text-[var(--signal-foreground)]">
               <Building2 className="size-5" />
             </div>
@@ -42,7 +42,7 @@ export function FinalCta() {
             </p>
 
             <Button
-              className="mt-6"
+              className="mt-6 max-sm:w-full"
               onClick={() => {
                 void trackEvent(analyticsEvents.businessCtaClicked, {
                   source: "final_cta",
@@ -56,7 +56,7 @@ export function FinalCta() {
             </Button>
           </article>
 
-          <article className="rounded-[2rem] border border-white/12 bg-white/[.065] p-7 md:p-8">
+          <article className="rounded-[2rem] border border-white/12 bg-white/[.065] p-6 sm:p-7 md:p-8">
             <div className="grid size-12 place-items-center rounded-2xl bg-[var(--route)] text-white">
               <CarFront className="size-5" />
             </div>
@@ -69,7 +69,7 @@ export function FinalCta() {
             </p>
 
             <Button
-              className="mt-6"
+              className="mt-6 max-sm:w-full"
               onClick={() => {
                 void trackEvent(analyticsEvents.driverCtaClicked, {
                   source: "final_cta",
